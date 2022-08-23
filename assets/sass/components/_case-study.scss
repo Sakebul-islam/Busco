@@ -1,0 +1,321 @@
+.case-study {
+    background-color: $case-study-bgcolor;
+    @extend %p-rel;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include breakpoint(sm) {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    @include breakpoint(md) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    @include breakpoint(lg) {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    @include breakpoint(xl) {
+        padding-top: 222px;
+        padding-bottom: 120px;
+    }
+
+    &__animation {
+        @extend %d-none;
+
+        @include breakpoint(lg) {
+            display: initial;
+        }
+
+        &-one {
+            @extend %p-abs;
+            top: 480px;
+            left: 180px;
+            @include add-prefix(animation, up-down-rotate 3s infinite alternate);
+
+            @include breakpoint(xl) {
+                top: 530px;
+                left: 180px;
+            }
+
+            @include breakpoint(xxl) {
+                top: 470px;
+                left: 180px;
+            }
+        }
+
+        &-two {
+            @extend%p-abs ;
+            left: -48px;
+            bottom: 300px;
+            @include add-prefix(animation, up-down-zoom 3s infinite alternate);
+        }
+
+        &-three {
+            @extend%p-abs ;
+            left: 48.5%;
+            top: 70%;
+            @include add-prefix(transform, translateX(-50%));
+            @include add-prefix(animation, up-down 3s infinite alternate);
+            animation-delay: 2s;
+            z-index: 1;
+        }
+
+        &-four {
+            @extend%p-abs ;
+            left: 100px;
+            top: 200px;
+            width: 20px;
+            height: 20px;
+            background-color: $theme-color;
+            @include border-radius(50%);
+            @include add-prefix(animation, up-down-zoom 3s infinite alternate);
+        }
+
+        &-five {
+            @extend%p-abs ;
+            left: 40%;
+            top: 200px;
+            @include border-radius(50%);
+            @include add-prefix(animation, up-down 3s infinite alternate);
+        }
+    }
+
+    &__left-section {
+        .section-title {
+            margin-bottom: 80px;
+
+            h4 {
+                @extend %text-medium;
+                margin-bottom: 12px;
+            }
+
+            p {
+                max-width: 100%;
+                @extend %text-medium;
+                color: $service-pragraph-color;
+
+                @include breakpoint(sm) {
+                    max-width: 80%;
+                }
+
+                @include breakpoint(md) {
+                    max-width: 50%;
+                }
+            }
+
+            .common-btn {
+                margin-top: 30px;
+                padding: 0 25px;
+
+                span {
+                    display: initial;
+                    @extend %text-capitalize,
+                    %text-medium;
+                    margin-right: 8px;
+                }
+
+                i,
+                svg {
+                    color: $theme-color;
+                    @include add-prefix(animation, left-to-right 2s infinite alternate);
+                    @include font-size($fs-18);
+                    @include transition($transition);
+                    @extend %text-medium;
+                }
+
+                &:hover {
+
+                    i,
+                    svg {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &__slider {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        @include border-radius(10px !important);
+
+        @include breakpoint(lg) {
+            margin-bottom: 0
+        }
+
+        div {
+            img {
+                @include border-radius(10px);
+            }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            @extend %text-center;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            background-color: rgba($color: $white-color, $alpha: .4);
+            @include border-radius(100%);
+            @include transition($transition);
+
+            @include breakpoint(sm) {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+            }
+
+            @include breakpoint(md) {
+                width: 40px;
+                height: 40px;
+                line-height: 50px;
+            }
+
+            @include breakpoint(lg) {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            &:after {
+                @include font-size($fs-h6);
+                content: none;
+            }
+        }
+
+        .swiper-button-prev {
+            @include transform(translateX(-100px));
+        }
+
+        .swiper-button-next {
+            @include transform(translateX(100px));
+        }
+
+        &:hover {
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                @include transform(translateX(0));
+            }
+        }
+
+    }
+
+    &__right-section {
+        @include border-radius(8px);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        @include background-image($folder: case-study,
+            $img: background,
+            $type: png,
+            $repeat: no-repeat);
+
+        @include breakpoint(xl) {
+            @include add-prefix(transform, translateX(-125px) translateY(-100px));
+        }
+
+        &-inner {
+            @extend %p-rel;
+            padding: 20px;
+
+            @include breakpoint(md) {
+                padding: 40px;
+            }
+
+            @include breakpoint(lg) {
+                padding: 60px;
+            }
+
+            @include breakpoint(xl) {
+                padding: 60px;
+                padding-left: 140px;
+            }
+
+            &::after {
+                @extend %p-abs;
+                top: -15px;
+                right: -15px;
+                width: 45px;
+                height: 45px;
+                @include add-prefix(animation, rotate 3s infinite alternate);
+                @include background-image($folder: case-study,
+                    $img: shape-1,
+                    $type: png,
+                    $repeat: no-repeat);
+            }
+
+        }
+
+        &__thumb {
+            @extend %text-center;
+            margin-bottom: 50px;
+        }
+
+        &__content {
+            h5 {
+                @extend %text-bold,
+                %text-capitalize;
+                color: $top-title-span-bgcolor;
+                margin-bottom: 25px;
+            }
+
+            &>span {
+                @extend %d-inline-block,
+                %text-medium,
+                %text-uppercase;
+                padding: 0 15px;
+                line-height: 1.8;
+                color: $white-color;
+                @include font-size($fs-13);
+                @include border-radius(15px);
+            }
+
+            .task {
+                background-color: $star-color;
+                margin-top: 55px;
+                margin-bottom: 25px;
+            }
+
+            .result {
+                background-color: $theme-color;
+                margin-top: 30px;
+                margin-bottom: 25px;
+            }
+
+            .common-btn {
+                margin-top: 45px;
+                padding: 0 35px;
+
+                span {
+                    color: $top-title-span-bgcolor;
+                    @extend %text-medium,
+                    %text-capitalize;
+                    margin-right: 8px;
+                }
+
+                i,
+                svg {
+                    color: $arrow-active-bgcolor;
+                    @include font-size($fs-18);
+                    @extend %text-medium;
+                    @include transition($transition);
+                    @include add-prefix(animation, left-to-right 2s infinite alternate);
+                }
+
+                &:hover {
+
+                    span,
+                    i,
+                    svg {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}

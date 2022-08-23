@@ -1,0 +1,162 @@
+.pricing-table-banner {
+    @include background-image($folder: pricing,
+        $img: 1,
+        $type: png,
+        $repeat: no-repeat);
+
+    @include breakpoint(lg) {
+        padding-top: 110px;
+        padding-bottom: 250px;
+    }
+
+    @include breakpoint(xl) {
+        padding-top: 120px;
+        padding-bottom: 260px;
+    }
+
+    .section-header {
+        color: $white-color;
+
+        h4 {
+            color: $white-color;
+        }
+
+        p {
+            color: $white-color;
+        }
+
+        &.section-header-style-2 {
+            margin-bottom: 0;
+
+            @include breakpoint(lg) {
+                margin-bottom: 75px;
+            }
+        }
+    }
+}
+
+.pricing-table-chart {
+    z-index: 999;
+
+    @include breakpoint(lg) {
+        margin-top: -262px;
+    }
+
+    &__pakages {
+        @include border-radius(12px);
+        overflow-x: auto;
+
+        @include breakpoint(lg) {
+            overflow-x: initial;
+        }
+    }
+
+    &__pakages-inner {
+        border-collapse: separate;
+        border-spacing: 0;
+        @include add-prefix(border, 1px solid $price-border-bgcolor);
+        @include add-prefix(border-radius, 8px);
+        background-color: $white-color;
+
+        thead {
+
+            tr {
+                th {
+                    @extend %text-capitalize,
+                    %text-left;
+                    @include add-prefix(border-left, 1px solid $price-border-bgcolor);
+                    @include add-prefix(border-top, none);
+                    vertical-align: text-top;
+                    padding: 30px;
+
+                    @include breakpoint(md) {
+                        padding: 46px 55px;
+
+                    }
+
+                    .title {
+                        @extend %text-capitalize,
+                        %text-regular;
+                        @include font-size($fs-h6);
+                        font-family: $title-font;
+                    }
+
+                    .second-title {
+                        font-family: $global-font;
+                        color: $theme-color;
+                        @extend %d-block,
+                        %text-bold;
+                        @include font-size($fs-h5);
+                        margin-bottom: 15px;
+
+                        span {
+                            @extend %d-block,
+                            %text-regular;
+                            @include font-size($fs-base);
+                            margin-top: -8px;
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        @include add-prefix(border-left, none);
+                        width: calc(40%);
+                        min-width: 350px;
+
+                        p {
+                            @include breakpoint(lg) {
+                                max-width: 70%;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        min-width: 200px;
+
+                        p {
+
+                            @include breakpoint(md) {
+                                max-width: 60%;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        width: calc(30%);
+                    }
+
+                    &:nth-child(3) {
+                        width: calc(30%);
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                &:last-child {
+                    td {
+                        padding: 30px 0;
+                    }
+                }
+
+                td {
+                    @extend %text-capitalize,
+                    %text-left;
+                    padding: 10px 0 10px 30px;
+                    @include add-prefix(border-left, 1px solid $price-border-bgcolor);
+                    @include add-prefix(border-top, 1px solid $price-border-bgcolor);
+
+                    &:first-child {
+                        @include add-prefix(border-left, none);
+                    }
+
+                    @include breakpoint(lg) {
+                        padding: 10px 0 10px 58px;
+                    }
+                }
+            }
+        }
+    }
+
+}

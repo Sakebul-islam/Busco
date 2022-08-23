@@ -1,0 +1,195 @@
+.call-back {
+
+
+    &__shap {
+        @extend %p-rel;
+
+        @include breakpoint(lg) {
+            &::before {
+                position: absolute;
+                content: "";
+                right: 0;
+                top: -160px;
+                width: 632px;
+                height: 538px;
+                @include background-image($folder: call-back,
+                    $img: shape-1,
+                    $type: png,
+                    $repeat: no-repeat);
+                z-index: -3;
+            }
+        }
+
+        @include breakpoint(xl) {
+            &::before {
+                position: absolute;
+                content: "";
+                right: -200px;
+                top: -160px;
+                width: 650px;
+                height: 550px;
+                @include background-image($folder: call-back,
+                    $img: shape-1,
+                    $type: png,
+                    $repeat: no-repeat);
+                z-index: -3;
+            }
+        }
+    }
+
+    &__wrapper {
+        @extend %p-rel;
+        padding: 20px 25px;
+        background: $call-back-form-bgcolor;
+        z-index: 0;
+        @include border-radius(12px);
+
+        @include breakpoint(md) {
+            padding: 35px 40px;
+
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 450px;
+                height: 100%;
+                @include background-image($folder: call-back,
+                    $img: 1,
+                    $type: png,
+                    $repeat: no-repeat);
+                z-index: -1;
+                border-bottom-left-radius: 12px;
+                opacity: .5;
+            }
+        }
+
+        @include breakpoint(lg) {
+            padding: 45px 50px;
+
+            &::after {
+                width: 380px;
+            }
+        }
+
+        @include breakpoint(xl) {
+            padding: 75px 58px;
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__conten {
+        margin-left: auto;
+
+        h5 {
+            @extend %text-medium,
+            %text-capitalize;
+            color: $title-color;
+            margin-bottom: 15px;
+        }
+
+        p {
+            @extend %text-medium;
+            @include font-size($fs-18);
+            color: $pragraph-color;
+        }
+
+        @include breakpoint(xl) {
+            max-width: 300px;
+        }
+    }
+
+    &__form {
+        form {
+
+            input,
+            select {
+                background-color: $white-color;
+                padding: 18px 28px;
+                color: $service-pragraph-color;
+                @extend %text-capitalize;
+                @include font-size($fs-15);
+                @include border-radius(6px);
+                box-shadow: 0px 10px 16px 0px rgba($service-pragraph-color, 0.05);
+            }
+
+            select {
+                @extend %p-rel;
+                cursor: pointer;
+
+                option {
+                    color: $theme-color;
+
+                    &:nth-child(1) {
+                        background-color: $theme-color;
+                        color: $white-color
+                    }
+
+                }
+            }
+
+            .name-number {
+                @extend %flex,
+                %justify-between,
+                %ai-center;
+                margin-bottom: 20px;
+
+                input {
+                    width: calc(100%);
+
+                    &:first-child {
+                        margin-bottom: 20px;
+
+                        @include breakpoint(lg) {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                @include breakpoint(lg) {
+                    input {
+                        width: calc(100% / 2 - 10px);
+                    }
+                }
+            }
+
+            .send-btn {
+                margin-top: 25px;
+                background-color: $theme-color;
+                @extend %d-block;
+                width: 100%;
+                @include border-radius(6px);
+                line-height: 2.9;
+
+                span {
+                    color: $white-color;
+                    @include font-size($fs-15);
+                    @extend %text-uppercase;
+                }
+            }
+        }
+    }
+
+    &__options {
+        @extend %p-rel;
+        width: 100%;
+
+        &::after {
+            @extend %p-abs,
+            %text-center;
+            content: "\f0d7";
+            font: var(--fa-font-solid);
+            top: 0;
+            right: 0;
+            width: 57.2px;
+            height: 57.2px;
+            line-height: 57.2px;
+            background-color: $white-color;
+            @include border-radius(0 6px 6px 0);
+            pointer-events: none;
+        }
+    }
+}

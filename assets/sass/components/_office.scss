@@ -1,0 +1,79 @@
+.office {
+    background-color: $case-study-bgcolor;
+
+    .section-header-style-2 {
+        h4 {
+            @extend %text-initial;
+
+            span {
+                letter-spacing: .1px;
+            }
+        }
+
+        p {
+            max-width: 95%;
+            margin: 0 auto;
+
+            @include breakpoint(sm) {
+                max-width: 80%;
+            }
+        }
+    }
+
+    &__slider {
+        padding-bottom: 50px;
+        box-shadow: 0px 10px 16px 0px rgb(0 12 32 / 5%);
+        @include border-radius(8px);
+
+        .swiper-slide {
+            &:nth-child(odd) {
+                .office__branch-table-item {
+                    .office__branch-table-title {
+                        background-color: $theme-color-strong;
+                    }
+                }
+            }
+        }
+    }
+
+    &__branch-table {
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        @include border-radius(8px);
+        @extend %flex,
+        %justify-between,
+        %align-items-start;
+
+        &-title {
+            background-color: $theme-color;
+            padding: 15px 30px;
+            border-right: 1px solid rgba($color: $white-color, $alpha: .1);
+
+            h6 {
+                @extend %text-medium,
+                %text-capitalize;
+                color: $white-color;
+                @include font-size($fs-18);
+            }
+
+        }
+
+        &-content {
+            border-right: 1px solid $price-border-bgcolor2;
+            padding: 25px 30px;
+
+            li {
+                padding: 5px 0;
+            }
+
+            a {
+                color: $pragraph-color;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+
+}

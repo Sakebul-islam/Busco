@@ -1,0 +1,55 @@
+.blog-banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .header-section {
+        &.blogs {
+            padding: 70px 0;
+
+            @include breakpoint(sm) {
+                padding: calc(95.5px + 66px) 0;
+            }
+
+            @include breakpoint(md) {
+                padding: calc(111px + 66px) 0;
+            }
+
+            @include breakpoint(lg) {
+                padding: calc(131.5px + 66px) 0;
+            }
+
+            @include breakpoint(xl) {
+                padding: calc(152px + 66px) 0;
+            }
+        }
+    }
+
+    .breadcrumb {
+        @extend %mb-0;
+
+        li {
+            @extend %text-capitalize,
+            %text-bold;
+            color: $title-color;
+            @include font-size(16px);
+
+            a {
+                color: $title-color;
+
+                &:after {
+                    content: "-";
+                    color: #0a1f44;
+                    margin-left: -1px;
+                    padding: 0 8px;
+                }
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+
+
+        }
+    }
+}

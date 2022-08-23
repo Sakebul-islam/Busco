@@ -1,0 +1,111 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$bootstrap-sass-asset-helper: false !default;
+//
+// Variables
+// --------------------------------------------------
+
+//project common color
+$theme-color: #11abec;
+$theme-color-strong: #27b2ec;
+$header-top-color:#edf5f8;
+$menu-icon-color: #ffb700;
+$title-color:#203260;
+$top-title-span-bgcolor: #0a1f44;
+$arrow-active-bgcolor:#8630dd;
+$arrow-deactive-bgcolor:#e6e8ec;
+$banner-pragraph-color:#696969;
+$service-pragraph-color: #8a94a6;
+$pragraph-color: #53627c;
+$star-color:#fdcd4c;
+$white-color:#fff;
+$black-color:#000;
+$call-back-form-bgcolor:#f3f2f4;
+$btn-bgcolor: #0e1847;
+$price-border-bgcolor: #f1f2f4;
+$price-border-bgcolor2: #f6f6f6;
+$author-title-color: #312f43;
+$author-desigation-color: #9697a0;
+$paginations-color: #a6aebc;
+$case-study-bgcolor: #f8f9fb;
+$social-bgcolor:#f6f6f6;
+$social-hover-bgcolor:#3b5999;
+
+
+
+$project-color: #00394f;
+$date-color: #888888;
+$alter-title-color: #0b185f;
+$eash-color: #696969;
+$contact-color: #2d334d;
+$border-color: rgba(255, 255, 255, 0.2);
+$border-color-1: #f0f0f0;
+$border-color-2: #f6fafd;
+$border-color-3: #e5ecf6;
+$border-color-4: #f6f9fb;
+$border-color-5: #ebebeb;
+$border-color-6: #2E3B42;
+$fa-color: #fafafa;
+$pra-color: #555555;
+$paginations-color: #2f2838;
+$paginations-bdr-color: #edf6ff;
+$tag-color: #203260;
+
+
+// ------------------------------------------
+// border colir 
+$header-border-color: #455681;
+$header-btm-border-color: #ededed;
+$features-border-color: #f8f9fb;
+
+// -------------------------------------------
+//Social color
+$social-color: #e04e79;
+$social-icon-color: #ff4d7b;
+$behance: #016ae3;
+$pinterest: #e60023;
+$dribble: #e94c89;
+$dribbble: #ea4c89;
+$facebook: #1ea1f2;
+$twitter: #55acee;
+$instagram: #e4405f;
+$google: #dd4b39;
+$google-plus: #db4437;
+$linkedin: #007bb5;
+$vimeo : #1ab7ea;
+$pinterest: #007bb5;
+$behance: #1769ff;
+$rss: #ee802f;
+
+//== Typography
+
+// font-family
+
+$title-font:"Rubik",
+sans-serif;
+$global-font: "Work Sans",
+sans-serif;
+$roboto: 'Roboto',
+sans-serif;
+
+// font-size
+
+$fs-base: 16px !default;
+
+$fs-h1: 72px;
+$fs-h2: 60px;
+$fs-h3: 50px;
+$fs-h4: 42px;
+$fs-h5: 35px;
+$fs-h6: 24px;
+$fs-20: 20px;
+$fs-18: 18px;
+$fs-15: 15px;
+$fs-13: 13px;
+
+$fs-14: 14px;
+$fs-12: 12px;
+//  transition
+$transition: all 0.3s ease;

@@ -1,0 +1,55 @@
+.common-btn {
+    @include add-prefix(border-radius, 50px);
+    line-height: 55px;
+    background-color: $white-color;
+    padding: 0 50px;
+    outline: none;
+    box-shadow: 0px 10px 16px 0px rgba(0, 12, 32, 0.05);
+
+    span {
+        @extend %text-capitalize,
+        %text-medium;
+        @include font-size($fs-base);
+        font-family: $title-font;
+        color: $btn-bgcolor;
+        font-family: 'Roboto', sans-serif;
+        @include transition($transition);
+    }
+
+    &:hover {
+        background-color: $theme-color;
+
+        span {
+            color: $white-color;
+        }
+    }
+}
+
+.common-btn--active {
+    background-color: $theme-color;
+
+    span {
+        color: $white-color;
+        @include transition($transition);
+    }
+
+    &:hover {
+        background-color: $white-color;
+
+        span {
+            color: $btn-bgcolor;
+        }
+    }
+}
+
+.common-btn--view-all {
+    @include add-prefix(border-radius, 3px !important);
+
+    &:hover {
+        background-color: $title-color;
+
+        span {
+            color: $white-color;
+        }
+    }
+}

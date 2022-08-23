@@ -1,0 +1,198 @@
+.news {
+    @include breakpoint(md) {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: -200px;
+            top: 0;
+            width: 963px;
+            height: 1109px;
+            @include background-image($folder: news,
+                $img: shape-1,
+                $type: png,
+                $repeat: no-repeat);
+            z-index: -1;
+        }
+    }
+
+    @include breakpoint(xl) {
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: -200px;
+            width: 963px;
+            height: 1109px;
+            @include background-image($folder: news,
+                $img: shape-1,
+                $type: png,
+                $repeat: no-repeat);
+        }
+    }
+
+    &__inner {
+        @extend %text-center;
+        box-shadow: 0px 10px 16px 0px rgba(0, 12, 32, 0.08);
+        @include border-radius(8px);
+
+        &:hover {
+            .news__content {
+                &>a {
+                    h6 {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &__thumb {
+        a {
+            width: 100%;
+
+            img {
+                @include border-radius(8px 8px 0 0);
+                width: 100%
+            }
+        }
+    }
+
+    &__content {
+        padding: 35px 50px;
+
+        @include breakpoint(sm) {
+            padding: 20px;
+        }
+
+        @include breakpoint(md) {
+            padding: 35px 50px;
+        }
+
+        &-min-title {
+            margin-bottom: 15px;
+            @extend %flex,
+            %justify-center,
+            %ai-center;
+
+            li {
+                padding: 0 10px;
+
+                span {
+                    @extend %text-uppercase,
+                    %text-medium,
+                    %d-inline-block;
+                    color: $theme-color;
+                    font-family: $title-font;
+                }
+
+                &:nth-child(2) {
+                    @extend %p-rel;
+
+                    &::after {
+                        @extend %p-abs;
+                        content: ".";
+                        top: 50%;
+                        left: -2.5px;
+                        width: 5px;
+                        height: 5px;
+                        transform: translateY(-50%);
+                        background-color: $service-pragraph-color;
+                        opacity: .3;
+                        @include border-radius(50%);
+                    }
+                }
+            }
+        }
+
+
+        &>a {
+            color: $top-title-span-bgcolor;
+
+            h6 {
+                @extend %text-medium,
+                %text-initial;
+                @include font-size($fs-20);
+                color: $top-title-span-bgcolor;
+            }
+        }
+    }
+
+    &__post-date {
+        @extend %flex,
+        %justify-center,
+        %ai-center;
+        margin-top: 25px;
+
+        li {
+            padding: 0 10px;
+
+            &.date,
+            &.author {
+                @extend %text-capitalize,
+                %text-regular;
+                @include font-size($fs-15);
+                font-family: $title-font;
+                color: $service-pragraph-color;
+
+                a {
+                    color: $service-pragraph-color;
+                }
+            }
+
+            &:nth-child(2) {
+                @extend %p-rel;
+
+                &::after {
+                    @extend %p-abs;
+                    content: ".";
+                    top: 50%;
+                    left: -2.5px;
+                    width: 5px;
+                    height: 5px;
+                    transform: translateY(-50%);
+                    background-color: $service-pragraph-color;
+                    opacity: .3;
+                    @include border-radius(50%);
+                    @include transition($transition);
+                }
+
+                a {
+                    text-decoration: underline;
+                    text-underline-position: under;
+                }
+            }
+
+            &:hover {
+                a {
+                    color: $theme-color;
+                }
+
+                &:nth-child(2) {
+                    &::after {
+                        background-color: $theme-color;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .common-btn {
+        margin-top: 35px;
+        @include border-radius(3px);
+
+        span {
+            @extend %text-capitalize;
+        }
+
+        &:hover {
+            background-color: $top-title-span-bgcolor;
+
+            span {
+                color: $white-color;
+            }
+        }
+    }
+}

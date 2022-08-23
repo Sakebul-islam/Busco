@@ -1,0 +1,162 @@
+.team {
+
+    @include background-image($folder: team,
+        $img: team-bg,
+        $type: jpg,
+        $repeat: no-repeat);
+    background-position: unset;
+    background-size: unset;
+
+    &__section-wrapper {
+        padding-bottom: 80px;
+
+        @include breakpoint(sm) {
+            padding-bottom: 90px;
+        }
+
+        @include breakpoint(md) {
+            padding-bottom: 0;
+        }
+    }
+
+
+    &__left-header {
+        h4 {
+            @extend %text-regular,
+            %text-capitalize;
+            color: $white-color;
+
+            @include breakpoint(md) {
+                max-width: 80%;
+            }
+
+            span {
+                @extend %text-bold;
+            }
+        }
+
+        .common-btn {
+            margin-top: 30px;
+            padding: 0 25px;
+            margin-bottom: 100px;
+
+            i,
+            svg {
+                color: $theme-color;
+                @include add-prefix(animation, left-to-right 2s infinite alternate);
+                @include font-size($fs-18);
+                @include transition($transition);
+                @extend %text-medium;
+            }
+
+            &:hover {
+
+                i,
+                svg {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    &__rght-thumb {
+
+        @extend %p-rel;
+
+        img {
+            @include border-radius(8px);
+            width: 100%;
+        }
+    }
+
+    &__blog-item {
+        background-color: $white-color;
+        @include border-radius(10px);
+
+
+        &:hover {
+            .team__blog-content {
+                h6 {
+                    a {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__blog-thumb {
+        img {
+            @include border-radius(10px 10px 0 0);
+            width: 100%;
+        }
+    }
+
+    &__blog-content {
+        padding: 35px 20px;
+        box-shadow: 0px 10px 16px 0px rgba(0, 12, 32, 0.08);
+        border: 1px solid $case-study-bgcolor;
+        border-top: none;
+
+        @include breakpoint(md) {
+            padding: 35px 25px;
+        }
+
+        h6 {
+            @include font-size($fs-20);
+            @extend %text-medium,
+            %text-capitalize;
+            margin-bottom: 18px;
+
+            &>a {
+                color: $top-title-span-bgcolor;
+            }
+        }
+
+        .read-more {
+            @extend %text-medium,
+            %text-capitalize;
+            color: $top-title-span-bgcolor;
+            margin-top: 28px;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+
+
+
+    &__about-us-video {
+        @extend %d-none;
+
+        @include breakpoint(xl) {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            content: "";
+            box-shadow: 0px 12px 36px 0px rgba(0, 12, 32, 0.18);
+            @include border-radius(6px);
+            left: -40px;
+            bottom: 200px;
+            background-color: $white-color;
+            padding: 40px 30px;
+
+            .video-icon {
+                width: 48px;
+                height: 40px;
+            }
+
+            .video-content {
+                margin-left: 20px;
+                max-width: 95px;
+
+                h6 {
+                    @include font-size($fs-20);
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}

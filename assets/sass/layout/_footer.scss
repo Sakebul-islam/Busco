@@ -1,0 +1,296 @@
+.footer {
+
+
+    // &__top-info {
+    //     @extend %flex,
+    //     %justify-between,
+    //     %align-items-start;
+    //     gap: 30px;
+
+    //     @include breakpoint(sm) {
+    //         gap: 20px;
+    //     }
+
+    //     @include breakpoint(md) {
+    //         gap: 15px;
+    //     }
+
+
+    // }
+
+    &__top-item {
+        &.clock-shape {
+            @extend %p-rel;
+
+            &::after {
+                @extend %p-abs;
+                top: 50px;
+                left: 50px;
+                width: 100px;
+                height: 100px;
+                @include background-image($folder: footer,
+                    $img: clock,
+                    $type: png,
+                    $repeat: no-repeat);
+                z-index: -1;
+            }
+        }
+
+        .social-icon {
+            margin-top: 35px;
+
+            li {
+                margin-right: 15px;
+                padding: 5px;
+                border: 2px solid $social-bgcolor;
+                @include border-radius(50%);
+
+                @include breakpoint(xl) {
+                    margin-right: 8px;
+                }
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                a {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    @include border-radius(50%);
+                    background-color: $social-bgcolor;
+                    @extend %text-center;
+                    box-shadow: 0px 12px 18px 0px rgba(59, 89, 153, 0.25);
+
+                    @include breakpoint(md) {
+                        width: 45px;
+                        height: 45px;
+                        line-height: 45px;
+                    }
+
+                    i,
+                    svg {
+                        color: $pragraph-color;
+                        @include font-size($fs-base);
+                    }
+
+                    &:hover {
+                        background-color: $social-hover-bgcolor;
+
+                        i,
+                        svg {
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.subscribe {
+            background-color: $top-title-span-bgcolor;
+            @include border-radius(6px);
+
+            .footer__top-inner {
+                padding: 30px 20px;
+                color: $white-color;
+
+                h6 {
+                    @extend %text-center,
+                    %text-medium;
+                    margin-bottom: 15px;
+                }
+
+                .subcribe-form {
+                    margin-top: 45px;
+
+                    input {
+                        background: $white-color !important;
+                        @include border-radius(8px);
+                        padding: 18px 20px;
+                        color: $service-pragraph-color;
+                    }
+
+                    .common-btn {
+                        @include border-radius(8px);
+                        margin-top: 20px;
+                        @include transition($transition);
+
+                        span {
+                            @extend %text-capitalize;
+                            font-family: $global-font;
+                        }
+
+                        i,
+                        svg {
+                            color: $white-color;
+                            @include transition($transition);
+                            @include font-size($fs-13);
+                        }
+
+                        &:hover {
+
+                            i,
+                            svg {
+                                color: $top-title-span-bgcolor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__top-inner {}
+
+    &__top-header {
+        margin-bottom: 35px;
+
+        h6 {
+            @extend %text-medium,
+            %text-capitalize;
+        }
+    }
+
+    &__top-details {
+        &>li {
+            margin-bottom: 18px;
+            @extend %text-capitalize;
+
+            span {
+                @extend %d-block;
+            }
+
+            .office-time {
+                @extend %text-medium;
+                color: $arrow-active-bgcolor;
+            }
+        }
+
+        a {
+            color: $title-color;
+            @include transition($transition);
+
+            &:hover {
+                h6 {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        h6 {
+            @extend %text-medium,
+            %text-initial;
+            @include font-size($fs-base);
+        }
+
+        .news__post-date {
+            @extend %justify-start;
+            margin: 25px 0;
+
+            .date {
+                padding-left: 0;
+            }
+
+            .author {
+                padding-right: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__bottom {
+        background-color: $case-study-bgcolor;
+
+        &-wrapper {
+            @extend %flex,
+            %justify-center,
+            %align-items-center;
+
+            @include breakpoint(md) {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            @include breakpoint(lg) {
+                justify-content: space-between;
+            }
+        }
+
+
+        &-left {
+            padding-bottom: 20px;
+
+            p {
+                @extend %text-initial,
+                %text-center;
+
+                a {
+                    color: $top-title-span-bgcolor;
+                    @extend %text-medium,
+                    %text-initial;
+
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+
+            @include breakpoint(md) {
+                padding: 20px 0;
+            }
+        }
+
+        &-right {
+            margin-bottom: -10px;
+
+            ul {
+                @extend %flex,
+                %justify-between,
+                %align-items-center;
+
+                li {
+                    a {
+                        color: $pragraph-color;
+                        @extend %text-capitalize;
+                        padding: 20px 3px;
+                        @include font-size($fs-base);
+
+                        &.active {
+                            color: $arrow-active-bgcolor;
+                        }
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $arrow-active-bgcolor;
+                        }
+
+                        @media only screen and (min-width: 320px) {
+                            padding: 20px 2px;
+                        }
+
+                        @media only screen and (min-width: 375px) {
+                            padding: 20px 7px;
+                        }
+
+                        @include breakpoint(sm) {
+                            padding: 15px;
+                        }
+
+                        @include breakpoint(lg) {
+                            padding: 20px 17.5px;
+                        }
+
+                    }
+                }
+            }
+
+            @include breakpoint(md) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
